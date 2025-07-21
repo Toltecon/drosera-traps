@@ -44,7 +44,46 @@ Trap triggered: non-admin could NOT change admin.
 
 ### Installation
 
-```bash
 git clone https://github.com/Toltecon/drosera-traps.git
 cd drosera-traps
 forge install
+
+
+### Configuration
+#### 1 . Create a .env file with the following:
+
+PRIVATE_KEY=your_private_key
+RPC_URL=https://your_rpc_url
+
+#### 2, Load environment variables:
+source .env
+
+### Deploy the Contract
+
+forge script script/Deploy.s.sol:Deploy --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast
+
+### Interact with the Trap
+#### Update the contract address in InteractTrap.s.sol, then run:
+forge script script/InteractTrap.s.sol:InteractTrap --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast
+
+### 📂 Project Structure
+
+drosera-traps/
+├── src/
+│   └── TwapTrap.sol           # The trap contract
+├── script/
+│   ├── Deploy.s.sol           # Deployment script
+│   └── InteractTrap.s.sol     # Interaction + trap demonstration script
+├── foundry.toml
+└── README.md
+
+### 📜 License
+
+MIT
+
+### 🤝 Author
+@Toltecon
+
+---
+
+Let me know if you'd like a version with GitHub badges or a logo header too!
