@@ -70,11 +70,16 @@ forge script script/InteractTrap.s.sol:InteractTrap --rpc-url $RPC_URL --private
 
 drosera-traps/
 ├── src/
+
 │   └── TwapTrap.sol           # The trap contract
+
 ├── script/
 │   ├── Deploy.s.sol           # Deployment script
+
 │   └── InteractTrap.s.sol     # Interaction + trap demonstration script
+
 ├── foundry.toml
+
 └── README.md
 
 ### 🤝 Author
