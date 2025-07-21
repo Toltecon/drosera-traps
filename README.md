@@ -77,13 +77,5 @@ drosera-traps/
 ├── foundry.toml
 └── README.md
 
-### 📜 License
-
-MIT
-
 ### 🤝 Author
 @Toltecon
-
----
-
-Let me know if you'd like a version with GitHub badges or a logo header too!
