@@ -21,3 +21,19 @@ The TwapTrap contract provides a simple but effective protection mechanism:
 ## 📍 Deployed Contract
 
 The contract was successfully deployed at:
+0xD173ED8df8EAc6e5Cd59f289912b5BBC01149FB0
+
+## ✅ Trap Verification Result
+
+We ran a script that:
+
+1. Attempts to change the admin as the current admin — succeeds ✅  
+2. Simulates the same function call from a non-admin address — and it reverts (trap triggered) ❌
+
+### 🧪 Interaction Log:
+
+Current admin: 0x0000000000000000000000000000000000001234
+Trap triggered: non-admin could NOT change admin.
+
+[2877] 0xD173ED8df8EAc6e5Cd59f289912b5BBC01149FB0::changeAdmin(0x0000000000000000000000000000000000001234)
+└─ ← [Revert] Only admin allowed
