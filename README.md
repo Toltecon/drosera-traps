@@ -1,66 +1,23 @@
 ## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+# 🪤 TwapTrap — Admin Trap Contract (Solidity + Foundry)
 
-Foundry consists of:
+This repository demonstrates a smart contract "trap" that prevents unauthorized admin changes. The contract uses a onlyAdmin modifier to restrict access.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## ⚙️ Trap Logic
 
-## Documentation
+The TwapTrap contract provides a simple but effective protection mechanism:
 
-https://book.getfoundry.sh/
+- Only the current admin can call changeAdmin().
+- Any attempt to call this function from another address will revert with the message Only admin allowed.
+- This is enforced using the onlyAdmin modifier.
 
-## Usage
+### 🔐 Verified Protection
 
-### Build
+> If any address other than the current admin tries to call changeAdmin(), the trap is triggered: the transaction is reverted and nothing happens.
 
-```shell
-$ forge build
-```
+---
 
-### Test
+## 📍 Deployed Contract
 
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+The contract was successfully deployed at:
